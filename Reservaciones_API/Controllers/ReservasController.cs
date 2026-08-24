@@ -10,7 +10,8 @@ namespace Reservaciones_API.Controllers
     [ApiController]
     public class ReservasController : ControllerBase
     {
-        private readonly List<Reservas> reservaciones = new List<Reservas>
+        // Le agregé la propiedad static para que los metodos puedan leerla y modificarla correctamente
+        private static readonly List<Reservas> reservaciones = new List<Reservas>
         {
             new Reservas { Id = 1, NombreReservacion = "Reservación 1", Fecha = DateOnly.FromDateTime(DateTime.Now), Cliente = "Cliente 1" },
             new Reservas { Id = 2, NombreReservacion = "Reservación 2", Fecha = DateOnly.FromDateTime(DateTime.Now.AddDays(1)), Cliente = "Cliente 2" },
